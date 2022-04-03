@@ -1,6 +1,6 @@
-import {SelectBox} from './selectbox';
-import {ListSelectorConfig} from './listselector';
-import {UIInstanceManager} from '../uimanager';
+import { SelectBox } from './selectbox';
+import { ListSelectorConfig } from './listselector';
+import { UIInstanceManager } from '../uimanager';
 import { PlayerAPI } from 'bitmovin-player';
 import { i18n } from '../localization/i18n';
 
@@ -22,6 +22,10 @@ export class VideoQualitySelectBox extends SelectBox {
   configure(player: PlayerAPI, uimanager: UIInstanceManager): void {
     super.configure(player, uimanager);
 
+    const labeling = function (resolution: any) {
+      return resolution.height + 'p'
+    };
+
     let selectCurrentVideoQuality = () => {
       this.selectItem(player.getVideoQuality().id);
     };
@@ -41,7 +45,7 @@ export class VideoQualitySelectBox extends SelectBox {
 
       // Add video qualities
       for (let videoQuality of videoQualities) {
-        this.addItem(videoQuality.id, videoQuality.label);
+        this.addItem(videoQuality.id, labeling(videoQuality));
       }
 
       // Select initial quality

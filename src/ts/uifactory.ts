@@ -92,6 +92,7 @@ export namespace UIFactory {
             new VolumeToggleButton(),
             new VolumeSlider(),
             new Spacer(),
+            new SettingsToggleButton({ settingsPanel: settingsPanel }),
             new PictureInPictureToggleButton(),
             new AirPlayToggleButton(),
             new CastToggleButton(),
