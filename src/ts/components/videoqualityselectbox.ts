@@ -23,7 +23,7 @@ export class VideoQualitySelectBox extends SelectBox {
     super.configure(player, uimanager);
 
     const labeling = function (resolution: any) {
-      return resolution.height + 'p'
+      return resolution.height + 'p';
     };
 
     let selectCurrentVideoQuality = () => {
