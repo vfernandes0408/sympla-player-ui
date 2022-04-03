@@ -57,7 +57,7 @@
   "replay": "Replay",
   "normal": "normal",
   "default": "default",
-  "live": "Live",
+  "live": "Ao Vivo",
   "subtitle.example": "example subtitle",
   "subtitle.select": "Select subtitle",
   "playingOn": "Reproduzindo em <strong>{castDeviceName}</strong>",
