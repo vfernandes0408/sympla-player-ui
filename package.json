@@ -1,6 +1,6 @@
 {
   "name": "@vfernandes0408/player-ui",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "Bitmovin Player UI Framework",
   "main": "./lib/js/framework/main.js",
   "types": "./lib/js/framework/main.d.ts",
