@@ -1,4 +1,4 @@
 node_modules/
 node_modules
-dist/*.html
-dist/css/demo*.css
+lib/*.html
+lib/css/demo*.css

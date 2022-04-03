@@ -2,8 +2,8 @@
   "name": "@vfernandes0408/player-ui",
   "version": "4.0.2",
   "description": "Bitmovin Player UI Framework",
-  "main": "./dist/js/framework/main.js",
-  "types": "./dist/js/framework/main.d.ts",
+  "main": "./lib/js/framework/main.js",
+  "types": "./lib/js/framework/main.d.ts",
   "scripts": {
     "test": "npx jest",
     "prepare": "gulp npm-prepare",
