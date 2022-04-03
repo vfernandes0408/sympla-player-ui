@@ -1,0 +1,29 @@
+@import "../variables";
+@import "../mixins";
+
+.#{$prefix}-ui-videotogglebutton {
+  @extend %ui-button;
+  background-size: 1.3em;
+
+  &:hover {
+    @include svg-icon-shadow;
+  }
+
+  &.#{$prefix}-muted {
+    background-image: svg("assets/skin-modern/images/music-off.svg");
+  }
+
+  &.#{$prefix}-unmuted {
+    &[data-#{$prefix}-video-level-tens="AUTO"] {
+      background-image: svg("assets/skin-modern/images/sd.svg");
+    }
+
+    &[data-#{$prefix}-video-level-tens="HD"] {
+      background-image: svg("assets/skin-modern/images/hd.svg");
+    }
+
+    &[data-#{$prefix}-video-level-tens="FHD"] {
+      background-image: svg("assets/skin-modern/images/music-on.svg");
+    }
+  }
+}

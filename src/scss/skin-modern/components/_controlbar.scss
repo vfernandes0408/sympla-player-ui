@@ -1,0 +1,86 @@
+@import "../variables";
+@import "../mixins";
+
+.#{$prefix}-ui-controlbar {
+  @extend %ui-container;
+
+  @include hidden-animated-focusable;
+  @include layout-align-bottom;
+
+  opacity: 1;
+  transition: opacity 0.3s, visibility 0s;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  left: 0%;
+  right: 0%;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 247, 248, 0) 0.52%,
+    rgba(245, 247, 248, 0.2) 33.85%,
+    rgba(168, 169, 175, 0.29) 65.62%,
+    rgba(73, 75, 87, 0.7) 100%
+  );
+  box-sizing: border-box;
+  line-height: 6em;
+  height: 90px;
+
+  .#{$prefix}-controlbar-top {
+    width: 99%;
+    margin: 0 .5%;
+  }
+  .#{$prefix}-controlbar-top,
+  .#{$prefix}-controlbar-bottom {
+    margin: 0 2%;
+    > .#{$prefix}-container-wrapper {
+      display: flex;
+      margin: 0.5em;
+    }
+  }
+
+  .#{$prefix}-controlbar-top {
+    .#{$prefix}-ui-label {
+      font-size: 0.9em;
+    }
+
+    > .#{$prefix}-container-wrapper > * {
+      margin: 0 0.5em;
+    }
+  }
+
+  .#{$prefix}-controlbar-bottom {
+    white-space: nowrap; // Required for iOS 8.2 to avoid wrapped controlbar due to wrong size calculation
+
+    > .#{$prefix}-container-wrapper {
+      .#{$prefix}-ui-volumeslider {
+        margin: auto 0.5em;
+        width: 5em;
+      }
+    }
+  }
+}
+
+// IE9 compatibility: fallback for missing flexbox support
+// sass-lint:disable nesting-depth
+.#{$prefix}-no-flexbox {
+  .#{$prefix}-ui-controlbar {
+    .#{$prefix}-controlbar-top,
+    .#{$prefix}-controlbar-bottom {
+      > .#{$prefix}-container-wrapper {
+        border-spacing: 0.5em 0;
+        display: table;
+
+        > * {
+          @include hidden; // Add hidden here too, else it is overwritten by display: table-cell
+
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+        .#{$prefix}-ui-volumeslider {
+          width: 10%;
+        }
+      }
+    }
+  }
+}

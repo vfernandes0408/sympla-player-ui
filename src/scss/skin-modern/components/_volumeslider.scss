@@ -1,0 +1,49 @@
+@import "../variables";
+@import "../mixins";
+@import "./seekbar";
+
+.#{$prefix}-ui-volumeslider {
+  @extend %ui-seekbar;
+
+  color: #0097ff;
+  // background-color: rgba(196, 196, 196, 0.2);
+  // width: 15em;
+  height: 2em;
+  top: 2em;
+  width: 35%;
+  margin: 0 1em !important;
+  border-radius: 4px;
+
+  .#{$prefix}-seekbar {
+    .#{$prefix}-seekbar-seekposition {
+      // width: 75%;
+      padding: auto 1em;
+    }
+    .#{$prefix}-seekbar-backdrop {
+      // width: 75%;
+      padding: auto 1em;
+    }
+
+    .#{$prefix}-seekbar-bufferlevel {
+      // width: 75%;
+      padding: auto 1em;
+    }
+
+    .#{$prefix}-seekbar-playbackposition {
+      background-color: #0097ff;
+      // width: 75%;
+      // padding: auto 1em;
+    }
+    .#{$prefix}-seekbar-playbackposition-marker {
+      // @include seekbar-position-marker($seekbar-height * 3 - 0.25em);
+      background-color: #0097ff;
+      border: 0;
+      // width: 75%;
+      // margin: auto;
+    }
+
+    .#{$prefix}-seekbar-bufferlevel {
+      display: none;
+    }
+  }
+}
