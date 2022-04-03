@@ -3,4 +3,3 @@ node_modules
 lib/*.html
 lib/css/demo*.css
 lib/css/demo*.css
-lib/js/framework/
